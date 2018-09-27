@@ -285,9 +285,23 @@ namespace Assignment_2
         public StockList MergeList(StockList listToMerge)
         {
             StockList resultList = new StockList();
+            StockNode mergeNode = null;
+            if(this.Length()>0)
+            {
+                resultList = this;
+            }
 
-            // write your implementation here
-
+            // Traverse through each node and add to the end of the node.
+            if (listToMerge.Length() > 0)
+            {
+                mergeNode = listToMerge.head;
+                while (mergeNode != null)
+                {
+                    resultList.AddLast(mergeNode.StockHolding);
+                    mergeNode = mergeNode.Next;
+                }
+            }
+            
             return resultList;
         }
 
@@ -301,6 +315,27 @@ namespace Assignment_2
 
             // write your implementation here
 
+            StockNode current = null;
+            
+            //sort the linked list
+            //Iterate through the entire list and move the node to its appropriate position in the list
+            
+            for (int i = 0; i < this.Length(); i++)
+            {                
+                current = this.head;
+                // walk till the end of the loop
+                while (current.Next != null)
+                {                    
+                    //compare the stockholding Holdings and swap it if it is greater
+                    if (current.StockHolding.Holdings.CompareTo(current.Next.StockHolding.Holdings) > 0)
+                    {
+                        current = Swap(current.StockHolding);
+                    }                    
+                    current = current.Next;
+                }
+
+                mostShareStock = current.StockHolding;
+            }
             return mostShareStock;
         }
 
@@ -330,6 +365,23 @@ namespace Assignment_2
             decimal value = 0.0m;
 
             // write your implementation here
+
+            StockNode current = null;
+
+            //sort the linked list
+            //Iterate through the entire list and move the node to its appropriate position in the list
+
+            for (int i = 0; i < this.Length(); i++)
+            {
+                current = this.head;
+                // walk till the end of the loop
+                while (current.Next != null)
+                {                    
+                    // Calculating the Value of shares
+                    value = current.StockHolding.Holdings * current.StockHolding.CurrentPrice + value;
+                    current = current.Next;                    
+                }
+            }
 
             return value;
         }
