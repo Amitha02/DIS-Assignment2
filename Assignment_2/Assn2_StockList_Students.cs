@@ -285,8 +285,25 @@ namespace Assignment_2
         public StockList MergeList(StockList listToMerge)
         {
             StockList resultList = new StockList();
+            StockNode mergeNode = null;
 
-            // write your implementation here
+            //Sort the first list by name and assign the list to the result list.
+            if (this.Length() > 0)
+            {
+                this.SortByName();
+                resultList = this;
+            }
+
+            // Traverse through each node and add to the end of the node.
+            if (listToMerge.Length() > 0)
+            {
+                mergeNode = listToMerge.head;
+                while (mergeNode != null)
+                {
+                    resultList.AddStock(mergeNode.StockHolding);
+                    mergeNode = mergeNode.Next;
+                }
+            }
 
             return resultList;
         }
@@ -301,6 +318,26 @@ namespace Assignment_2
 
             // write your implementation here
 
+            StockNode current = null;
+                        
+            //Iterate through the entire list and move the node to its appropriate position in the list
+            
+            for (int i = 0; i < this.Length(); i++)
+            {                
+                current = this.head;
+                // walk till the end of the loop
+                while (current.Next != null)
+                {                    
+                    //compare the stockholding Holdings and swap it if it is greater
+                    if (current.StockHolding.Holdings.CompareTo(current.Next.StockHolding.Holdings) > 0)
+                    {
+                        current = Swap(current.StockHolding);
+                    }                    
+                    current = current.Next;
+                }
+
+                mostShareStock = current.StockHolding;
+            }
             return mostShareStock;
         }
 
@@ -331,6 +368,22 @@ namespace Assignment_2
 
             // write your implementation here
 
+            StockNode current = null;
+
+            //Iterate through the entire list and move the node to its appropriate position in the list
+
+            if (this.Length() > 0)
+            {
+                current = this.head;
+                // walk till the end of the loop
+                while (current != null)
+                {
+                    // Calculating the Value of shares
+                    value = current.StockHolding.Holdings * current.StockHolding.CurrentPrice + value;
+                    current = current.Next;
+                }
+            }
+
             return value;
         }
 
@@ -341,9 +394,25 @@ namespace Assignment_2
         public int Similarity(StockList listToCompare)
         {
             int similarityIndex = 0;
+            StockNode current = null;
 
-            // write your implementation here
-
+            // Retrun if lenght is less that 0
+            if (this.Length() > 0)
+            {
+                for (StockNode node = listToCompare.head; node != null; node = node.Next)
+                {
+                    current = this.head;
+                    while (current != null)
+                    {
+                        // Compare each node and increment the simillaries if they have the same names.
+                        if (current.StockHolding.Name.Equals(node.StockHolding.Name))
+                        {
+                            similarityIndex++;
+                        }
+                        current = current.Next;
+                    }
+                }
+            }
             return similarityIndex;
         }
 

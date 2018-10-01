@@ -5,3 +5,10 @@ I:\Fall 2018\DIS\repos\Assignment_2\Assignment_2\bin\Debug\Assignment_2.pdb
 I:\Fall 2018\DIS\repos\Assignment_2\Assignment_2\obj\Debug\Assignment_2.exe
 I:\Fall 2018\DIS\repos\Assignment_2\Assignment_2\obj\Debug\Assignment_2.pdb
 I:\Fall 2018\DIS\repos\Assignment_2\Assignment_2\obj\Debug\Assignment_2.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\USF\DIS\Assignment2\Assn_Two\Assignment_2\obj\Debug\Assignment_2.csprojAssemblyReference.cache
+C:\Users\Home\Desktop\USF\DIS\Assignment2\Assn_Two\Assignment_2\obj\Debug\Assignment_2.csproj.CoreCompileInputs.cache
+C:\Users\Home\Desktop\USF\DIS\Assignment2\Assn_Two\Assignment_2\obj\Debug\Assignment_2.exe
+C:\Users\Home\Desktop\USF\DIS\Assignment2\Assn_Two\Assignment_2\obj\Debug\Assignment_2.pdb
+C:\Users\Home\Desktop\USF\DIS\Assignment2\Assn_Two\Assignment_2\bin\Debug\Assignment_2.exe.config
+C:\Users\Home\Desktop\USF\DIS\Assignment2\Assn_Two\Assignment_2\bin\Debug\Assignment_2.exe
+C:\Users\Home\Desktop\USF\DIS\Assignment2\Assn_Two\Assignment_2\bin\Debug\Assignment_2.pdb
